@@ -95,7 +95,9 @@ void diagonalPrava(int a) {
 void diagonalLeva(int a) {
     for (int i = 0; i < a; i++) {
         for (int j = 0; j < a-1-i; j++) {printf(" ");}
-        printf("x\n");
+        printf("x");
+        for (int j = 0; j < i; j++) {printf(" ");}
+        printf("\n");
     }
 }
 
@@ -108,10 +110,12 @@ void trojuhelnik(int a) {
             if (i != 0) {
                 printf("x");
             }
+            for (int j = 0; j < a-i-1; j++) {printf(" ");}
             printf("\n");
         }
         else {
             for (int j = 0; j < i+i+1; j++) {printf("x");}
+            printf("\n");
         }
 
     }
@@ -135,6 +139,9 @@ void pecko(int a, int b) {
             if (i < b/2) {
                 for (int j = 0; j < a-2; j++) {printf(" ");}
                 printf("x");
+            }
+            else {
+                for (int j = 0; j < a-1; j++) {printf(" ");}
             }
 
         }
