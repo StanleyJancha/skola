@@ -1,7 +1,7 @@
 {
 	"InstallScripts" : 
 	[
-		"C:/Users/ovast/CLionProjects/skola/3-funkce/cmake-build-debug/cmake_install.cmake"
+		"/home/standa/CLionProjects/skola/3-funkce/cmake-build-debug/cmake_install.cmake"
 	],
 	"Parallel" : false
 }

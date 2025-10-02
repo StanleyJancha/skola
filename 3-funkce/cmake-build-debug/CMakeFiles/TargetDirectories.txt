@@ -1,3 +1,3 @@
-C:/Users/ovast/CLionProjects/skola/3-funkce/cmake-build-debug/CMakeFiles/funkce.dir
-C:/Users/ovast/CLionProjects/skola/3-funkce/cmake-build-debug/CMakeFiles/edit_cache.dir
-C:/Users/ovast/CLionProjects/skola/3-funkce/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/standa/CLionProjects/skola/3-funkce/cmake-build-debug/CMakeFiles/funkce.dir
+/home/standa/CLionProjects/skola/3-funkce/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/standa/CLionProjects/skola/3-funkce/cmake-build-debug/CMakeFiles/rebuild_cache.dir

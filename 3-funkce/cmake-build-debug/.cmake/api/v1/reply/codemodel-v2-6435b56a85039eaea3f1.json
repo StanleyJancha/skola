@@ -6,7 +6,7 @@
 			[
 				{
 					"build" : ".",
-					"jsonFile" : "directory-.-Debug-d0094a50bb2071803777.json",
+					"jsonFile" : "directory-.-Debug-f5ebdc15457944623624.json",
 					"minimumCMakeVersion" : 
 					{
 						"string" : "4.0"
@@ -39,7 +39,7 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "funkce::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-funkce-Debug-e41afc227f20b2eba09c.json",
+					"jsonFile" : "target-funkce-Debug-00f6590b0a9f3648880b.json",
 					"name" : "funkce",
 					"projectIndex" : 0
 				}
@@ -49,8 +49,8 @@
 	"kind" : "codemodel",
 	"paths" : 
 	{
-		"build" : "C:/Users/ovast/CLionProjects/skola/3-funkce/cmake-build-debug",
-		"source" : "C:/Users/ovast/CLionProjects/skola/3-funkce"
+		"build" : "/home/standa/CLionProjects/skola/3-funkce/cmake-build-debug",
+		"source" : "/home/standa/CLionProjects/skola/3-funkce"
 	},
 	"version" : 
 	{

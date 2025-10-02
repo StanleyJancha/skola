@@ -1,10 +1,9 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/funkce.dir/main.c.obj"
-  "CMakeFiles/funkce.dir/main.c.obj.d"
-  "funkce.exe"
-  "funkce.exe.manifest"
+  "CMakeFiles/funkce.dir/link.d"
+  "CMakeFiles/funkce.dir/main.c.o"
+  "CMakeFiles/funkce.dir/main.c.o.d"
+  "funkce"
   "funkce.pdb"
-  "libfunkce.dll.a"
 )
 
 # Per-language clean rules from dependency scanning.
