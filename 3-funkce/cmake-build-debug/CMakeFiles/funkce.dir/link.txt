@@ -1,1 +1,1 @@
-/usr/bin/cc -g -Wl,--dependency-file=CMakeFiles/funkce.dir/link.d CMakeFiles/funkce.dir/main.c.o -o funkce
+/usr/bin/cc -g -Wl,--dependency-file=CMakeFiles/funkce.dir/link.d CMakeFiles/funkce.dir/main.c.o -o funkce  -lm

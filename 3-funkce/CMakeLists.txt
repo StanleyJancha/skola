@@ -5,3 +5,5 @@ set(CMAKE_C_STANDARD 11)
 
 add_executable(funkce main.c
         drawing.h)
+
+target_link_libraries(funkce PRIVATE m)
