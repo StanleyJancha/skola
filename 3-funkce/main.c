@@ -194,7 +194,7 @@ void animace() {
         showSnake(&snake);
         //showSnakeBodyDebug(&snake);
         moveSnakeRandom(&snake);
-        animate_ms(200);
+        animate_ms((unsigned int)200);
         clear_screen();
     }
 }
@@ -228,7 +228,7 @@ void showSnake(Snake* snake) {
         else {set_yellow_color();}
 
         move_to(snake->body[i].y, snake->body[i].x * 2);
-        printf("  ");
+        printf("%d ",i);
     }
 }
 
