@@ -73,11 +73,18 @@ int main(int argc, char** argv) {
         stringToken = strtok(NULL,",");
         akcieJ.pocetProvedenychObhcodu = atoi(stringToken);
 
-        if ((strcmp(argv[1], akcieJ.nazev) == 0) && argAkcieIndex == -1) {
-            argAkcieIndex = i;
-        }
-
         akcie[i] = akcieJ;
+
+
+        if ((strcmp(argv[1], akcieJ.nazev) == 0)) {
+            if (argAkcieIndex == -1) {
+                argAkcieIndex = i;
+            }
+            else if (akcie[i].pocetProvedenychObhcodu > akcie[argAkcieIndex].pocetProvedenychObhcodu) {
+                argAkcieIndex = i;
+            }
+
+        }
     }
 
     printf("<html>\n<body>\n");
@@ -100,7 +107,7 @@ int main(int argc, char** argv) {
 
     printf("<table>\n<thead>\n<tr><th>Day</th><th>Ticker</th><th>Start</th><th>End</th><th>Diff</th><th>Volume</th></tr>\n</thead>\n<tbody>\n");
 
-    for (int i = n - 1; i >= 0; --i) {
+    for (int i = n - 1; i >= 0; i--) {
         bool bold = (strcmp(akcie[i].nazev,argv[1]) == 0);
         printf("<tr>\n");
         printf((bold)?"\t<td><b>%d</b></td>\n":"\t<td>%d</td>\n",akcie[i].indexDne);
@@ -109,7 +116,7 @@ int main(int argc, char** argv) {
         printf((bold)?"\t<td><b>%.2f</b></td>\n":"\t<td>%.2f</td>\n",akcie[i].hodnotaKonec);
         printf((bold)?"\t<td><b>%.2f</b></td>\n":"\t<td>%.2f</td>\n",akcie[i].hodnotaKonec-akcie[i].hodnotaZacatek);
         char tmp[20];
-        intPrettify(akcie[argAkcieIndex].pocetProvedenychObhcodu,tmp);
+        intPrettify(akcie[i].pocetProvedenychObhcodu,tmp);
         printf((bold)?"\t<td><b>%s</b></td>\n":"\t<td>%s</td>\n",tmp);
         printf("</tr>\n");
     }
@@ -160,8 +167,8 @@ int main(int argc, char** argv) {
 
     // UVOLNENI PAMETI
     for (int i = 0; i < n; ++i) {
-        free(akcie->nazev);
-        akcie->nazev = NULL;
+        free(akcie[i].nazev);
+        akcie[i].nazev = NULL;
     }
     free(akcie);
     akcie = NULL;
