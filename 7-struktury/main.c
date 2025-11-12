@@ -11,17 +11,37 @@ struct Akcie {
     int pocetProvedenychObhcodu;
 };
 
-char* intPrettify(int x) {
+void intPrettify(int input, char *output) {
+    char str[20];
+    sprintf(str, "%d",input);
 
+
+    int firstNotThree = (strlen(str) % 3 != 0)? (strlen(str) % 3): 3;
+
+    int i = 0;
+    int newIndex = 0;
+
+    for (; i < firstNotThree; ++i) {
+        output[newIndex] = str[i];
+        newIndex++;
+    }
+
+    for (; i < strlen(str); ++i) {
+        if ((i-firstNotThree) % 3 == 0) {
+            output[newIndex] = '_';
+            newIndex++;
+        }
+        output[newIndex] = str[i];
+        newIndex++;
+    }
+    output[newIndex] = '\0';
 }
 
 
 int main(int argc, char** argv) {
 
-    char *stint = intPrettify(15326754);
-    printf("int pretify: %s", stint);
-    free(stint);
-    stint = NULL;
+    char stint[50];
+    intPrettify(15326754,stint);
 
     if (argc < 3 || atoi(argv[2]) <= 0 ) {
         printf("Wrong parameters\n");
@@ -37,7 +57,6 @@ int main(int argc, char** argv) {
     char line[100];
     for (int i = 0; i < n; ++i) {
         fgets(line,100,stdin);
-        // printf("%s\n",line);
 
         struct Akcie akcieJ = {};
 
@@ -69,7 +88,9 @@ int main(int argc, char** argv) {
         printf("<div>Day: %d</div>\n", akcie[argAkcieIndex].indexDne);
         printf("<div>Start price: %.2f</div>\n",akcie[argAkcieIndex].hodnotaZacatek);
         printf("<div>End price: %.2f</div>\n",akcie[argAkcieIndex].hodnotaKonec);
-        printf("<div>Volume: %d</div>\n",akcie[argAkcieIndex].pocetProvedenychObhcodu);
+        char tmp[20];
+        intPrettify(akcie[argAkcieIndex].pocetProvedenychObhcodu,tmp);
+        printf("<div>Volume: %s</div>\n",tmp);
 
     }
     else {
@@ -87,11 +108,53 @@ int main(int argc, char** argv) {
         printf((bold)?"\t<td><b>%.2f</b></td>\n":"\t<td>%.2f</td>\n",akcie[i].hodnotaZacatek);
         printf((bold)?"\t<td><b>%.2f</b></td>\n":"\t<td>%.2f</td>\n",akcie[i].hodnotaKonec);
         printf((bold)?"\t<td><b>%.2f</b></td>\n":"\t<td>%.2f</td>\n",akcie[i].hodnotaKonec-akcie[i].hodnotaZacatek);
-        printf((bold)?"\t<td><b>%d</b></td>\n":"\t<td>%d</td>\n",akcie[i].pocetProvedenychObhcodu);
+        char tmp[20];
+        intPrettify(akcie[argAkcieIndex].pocetProvedenychObhcodu,tmp);
+        printf((bold)?"\t<td><b>%s</b></td>\n":"\t<td>%s</td>\n",tmp);
         printf("</tr>\n");
     }
-
     printf("</tbody>\n</table>\n</body>\n</html>\n");
+
+
+    //BONUS NEFUNKCI :(
+    // FILE *file = fopen("./graf.svg","w");
+    // if (file == NULL) {
+    //     printf("Nepodarilo se nacist soubor");
+    // }
+    // else {
+    //     int width = 5000;
+    //     int height = 5000;
+    //     fprintf(file, "<svg width=\"%d\" height=\"%d\" xmlns=\"http://www.w3.org/2000/svg\">\n",width,height);
+    //     fprintf(file, "<g transform=\"translate(0,%d) scale(1,-1)\">\n", height);
+    //
+    //     int tIndex = 0;
+    //     int yScale = 10;
+    //     char colorRed[10] = "255,0,0";
+    //     char colorGreen[10] = "0,255,0";
+    //
+    //     for (int i = 0; i < n; ++i) {
+    //         if (strcmp(akcie[i].nazev,argv[1]) != 0) {
+    //             continue;
+    //         }
+    //         printf("start %f\nend:%f\ndiff: %f\n",akcie[i].hodnotaZacatek,akcie[i].hodnotaKonec,(akcie[i].hodnotaKonec-akcie[i].hodnotaZacatek));
+    //         int sirka = 10;
+    //         int vyska = abs((int)((akcie[i].hodnotaKonec-akcie[i].hodnotaZacatek)*100)*yScale)/100;
+    //         int x = tIndex*20;
+    //         int y = (int)akcie[i].hodnotaZacatek - ((akcie[i].hodnotaKonec-akcie[i].hodnotaZacatek > 0)?0:vyska);
+    //         fprintf(file,
+    //             "<rect width=\"%d\" height=\"%d\" x=\"%d\" y=\"%d\" style=\"fill:rgb(%s)\" />\n",
+    //             sirka,vyska*yScale,
+    //             x,y*yScale,
+    //             (akcie[i].hodnotaKonec-akcie[i].hodnotaZacatek > 0)?colorGreen:colorRed);
+    //
+    //         tIndex++;
+    //     }
+    //     fprintf(file, "</g>\n");
+    //     fprintf(file, "</svg>");
+    //
+    //     fclose(file);
+    // }
+
 
 
 
