@@ -1,0 +1,7 @@
+--- /home/standa/CLionProjects/skola/8-soubory/UPR_2025W_BER0134_ex08_files/test-output-file-case-insensitive-3/output.txt
++++ /home/standa/CLionProjects/skola/8-soubory/UPR_2025W_BER0134_ex08_files/test-output-file-case-insensitive-3/workdir/output.txt
+@@ -1,4 +0,0 @@
+-zzzbaz
+-BAZabzbaz
+-baxbayBaz
+-foo baz

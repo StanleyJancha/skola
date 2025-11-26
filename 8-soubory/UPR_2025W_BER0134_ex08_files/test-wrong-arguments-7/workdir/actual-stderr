@@ -1,0 +1,15 @@
+AddressSanitizer:DEADLYSIGNAL
+=================================================================
+==83348==ERROR: AddressSanitizer: SEGV on unknown address 0x000000000000 (pc 0x7f197a68868e bp 0x7ffc96d15860 sp 0x7ffc96d14fd0 T0)
+==83348==The signal is caused by a READ memory access.
+==83348==Hint: address points to the zero page.
+    #0 0x7f197a68868e in _IO_fgets libio/iofgets.c:47
+    #1 0x7f197a878305 in fgets ../../../../src/libsanitizer/sanitizer_common/sanitizer_common_interceptors.inc:1205
+    #2 0x55f3c34459c0 in main /home/standa/CLionProjects/skola/8-soubory/main.c:54
+    #3 0x7f197a633ca7 in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+    #4 0x7f197a633d64 in __libc_start_main_impl ../csu/libc-start.c:360
+    #5 0x55f3c3445180 in _start (/home/standa/CLionProjects/skola/8-soubory/cmake-build-debug/8_soubory+0x1180) (BuildId: 9a68c0cc14fca58a5ab31b286f859bc7edbbf802)
+
+AddressSanitizer can not provide additional info.
+SUMMARY: AddressSanitizer: SEGV libio/iofgets.c:47 in _IO_fgets
+==83348==ABORTING
