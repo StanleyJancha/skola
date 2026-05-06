@@ -1,0 +1,11 @@
+
+=================================================================
+==83350==ERROR: LeakSanitizer: detected memory leaks
+
+Direct leak of 56 byte(s) in 7 object(s) allocated from:
+    #0 0x7f1e5b8f4c57 in malloc ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:69
+    #1 0x5568c97a4aa0 in getSubString /home/standa/CLionProjects/skola/8-soubory/main.c:76
+    #2 0x5568c97a4951 in main /home/standa/CLionProjects/skola/8-soubory/main.c:55
+    #3 0x7f1e5b633ca7 in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+
+SUMMARY: AddressSanitizer: 56 byte(s) leaked in 7 allocation(s).
