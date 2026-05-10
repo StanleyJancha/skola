@@ -8,10 +8,11 @@
 #include <string>
 
 #include "../Pomocne/ID_Manager.h"
+#include "../Pomocne/ToStringHelper.h"
 using namespace std;
 
 
-class Zasilka {
+class Zasilka : public ToStringHelper {
     static ID_Manager id_manager;
 
     uint32_t id;
@@ -19,12 +20,10 @@ class Zasilka {
     uint8_t vaha; // kg
     uint8_t objem; // m^3
 
-    uint32_t id_ciloveho_skladu;
-
 public:
     Zasilka(const string &nazev, uint8_t vaha, uint8_t objem);
 
-    string toString();
+    virtual std::string vypis(bool kratky);
 
     uint32_t get_id() const {
         return id;

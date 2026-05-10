@@ -78,7 +78,7 @@ string Prostredek::vypis(bool kratky) {
     else {
         for (auto zasilka : naklad) {
             str += '\t';
-            str += zasilka->toString();
+            str += zasilka->vypis(true);
             str += '\n';
         }
     }

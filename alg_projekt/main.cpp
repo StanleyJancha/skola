@@ -28,7 +28,7 @@ int main() {
             return -1;
         };
 
-        printf("Tree source %s",test_file_path.c_str());
+        printf("Tree source %s\n",test_file_path.c_str());
         ftree.printTree();
 
         // Soluction num 1. Complexity O(V^2) V - nubmer of vericies

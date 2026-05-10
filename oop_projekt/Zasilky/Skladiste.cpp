@@ -85,7 +85,7 @@ string Skladiste::vypis(bool kratky){
     else {
         for (auto zasilka : zasilky_ze_skladu) {
             str += '\t';
-            str += zasilka->toString();
+            str += zasilka->vypis(true);
             str += '\n';
         }
     }

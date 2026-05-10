@@ -8,7 +8,10 @@
 
 
 class ToStringHelper {
+public:
+    virtual ~ToStringHelper() = default;
 
+private:
     virtual std::string vypis(bool kratky) = 0;
 };
 

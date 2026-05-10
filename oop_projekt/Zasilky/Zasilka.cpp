@@ -13,6 +13,7 @@ Zasilka::Zasilka(const string &nazev, uint8_t vaha, uint8_t objem)
     this->id = id_manager.get_id();
 }
 
-string Zasilka::toString() {
+std::string Zasilka::vypis(bool kratky) {
     return "Zasilka id:"+ to_string(id) + "\tnazev: " + nazev;
 }
+
